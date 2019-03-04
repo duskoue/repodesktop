@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAA05DAE-6DFA-41BF-9FFE-C1EFDE616326}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagacinskoPoslovanje</RootNamespace>
+    <AssemblyName>MagacinskoPoslovanje</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.2.0\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.4\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Services\ArtikalServices.cs" />
+    <Compile Include="Services\ArtikliIzlazServices.cs" />
+    <Compile Include="Services\ArtikliLokacijeServices.cs" />
+    <Compile Include="Services\ArtikliUlazServices.cs" />
+    <Compile Include="Services\ArtikliZamenaServices.cs" />
+    <Compile Include="Services\AtributServices.cs" />
+    <Compile Include="Services\BarcodeServices.cs" />
+    <Compile Include="Services\BlokadaServices.cs" />
+    <Compile Include="Services\BrojacServices.cs" />
+    <Compile Include="Services\CarinskaGrupaArtiklaServices.cs" />
+    <Compile Include="Services\CarinskaIspostavaServices.cs" />
+    <Compile Include="Services\CarinskaOtpremnicaServices.cs" />
+    <Compile Include="Services\CarinskaOtpremnicaStavkeServices.cs" />
+    <Compile Include="Services\CarinskaPrijemnicaServices.cs" />
+    <Compile Include="Services\CarinskaPrijemnicaStavkeServices.cs" />
+    <Compile Include="Services\COReportServices.cs" />
+    <Compile Include="Services\CPReportServices.cs" />
+    <Compile Include="Services\CrossDockServices.cs" />
+    <Compile Include="Services\DodatnoAngazovaniRadnikServices.cs" />
+    <Compile Include="Services\DupleSifreServices.cs" />
+    <Compile Include="Services\EksterniKorisnikServices.cs" />
+    <Compile Include="Services\EksterniPrenoServices.cs" />
+    <Compile Include="Services\EksterniPrenosStavkeServices.cs" />
+    <Compile Include="Services\GrupaServices.cs" />
+    <Compile Include="Services\GrupaStavkeServces.cs" />
+    <Compile Include="Services\ImportSerijskihBrojevaTempServices.cs" />
+    <Compile Include="Services\InterfaceLogServices.cs" />
+    <Compile Include="Services\InterniPrenoServices.cs" />
+    <Compile Include="Services\InterniPrenosStavkeServices.cs" />
+    <Compile Include="Services\IServices.cs" />
+    <Compile Include="Services\IzlazniIDServices.cs" />
+    <Compile Include="Services\IzvestajSkladistenjaServices.cs" />
+    <Compile Include="Services\JCINaimenovanjaServices.cs" />
+    <Compile Include="Services\JMServices.cs" />
+    <Compile Include="Services\KarticaArtiklaServices.cs" />
+    <Compile Include="Services\KEPUServices.cs" />
+    <Compile Include="Services\KontaktServices.cs" />
+    <Compile Include="Services\KontejnerPrijemServices.cs" />
+    <Compile Include="Services\KontejnerServices.cs" />
+    <Compile Include="Services\KorisnikServices.cs" />
+    <Compile Include="Services\LogHostServices.cs" />
+    <Compile Include="Services\LokacijaKlijentaServices.cs" />
+    <Compile Include="Services\LokacijaServices.cs" />
+    <Compile Include="Services\LPNServices.cs" />
+    <Compile Include="Services\MagacinskaKnjigaServices.cs" />
+    <Compile Include="Services\MestoServices.cs" />
+    <Compile Include="Services\NabavniNalogServices.cs" />
+    <Compile Include="Services\NabavniNalogStavkeServices.cs" />
+    <Compile Include="Services\NalogLogPodaciServices.cs" />
+    <Compile Include="Services\NalogZaPakovanjeServices.cs" />
+    <Compile Include="Services\NeradniDaniServices.cs" />
+    <Compile Include="Services\NerazduzeniMBServices.cs" />
+    <Compile Include="Services\OblastServices.cs" />
+    <Compile Include="Services\ObracunCarinskiServices.cs" />
+    <Compile Include="Services\ObracunKomercijalniServices.cs" />
+    <Compile Include="Services\ObracunServices.cs" />
+    <Compile Include="Services\OdabirReportServices.cs" />
+    <Compile Include="Services\OdabirServices.cs" />
+    <Compile Include="Services\OtpremnicaKontrolaServices.cs" />
+    <Compile Include="Services\OtpremnicaServices.cs" />
+    <Compile Include="Services\OtpremnicaStatusLogServices.cs" />
+    <Compile Include="Services\OtpremnicaStavkeServices.cs" />
+    <Compile Include="Services\PakovanjeServices.cs" />
+    <Compile Include="Services\ParametrizacijaServices.cs" />
+    <Compile Include="Services\PodesavanjaFormiServices.cs" />
+    <Compile Include="Services\PodesavanjeZalihaServices.cs" />
+    <Compile Include="Services\PodesavanjeZalihaStavkeServices.cs" />
+    <Compile Include="Services\PopiServices.cs" />
+    <Compile Include="Services\PopisListaServices.cs" />
+    <Compile Include="Services\PopisStavkeServices.cs" />
+    <Compile Include="Services\PorukaKnjizenjaServices.cs" />
+    <Compile Include="Services\PosaoServices.cs" />
+    <Compile Include="Services\PravoServices.cs" />
+    <Compile Include="Services\PrijemnicaServices.cs" />
+    <Compile Include="Services\PrijemnicaStavkeServices.cs" />
+    <Compile Include="Services\PrijemReportServices.cs" />
+    <Compile Include="Services\PrilogServices.cs" />
+    <Compile Include="Services\PSLArtikliTempServices.cs" />
+    <Compile Include="Services\RazduzenjaMBServices.cs" />
+    <Compile Include="Services\RazdvajanjePrijemaServices.cs" />
+    <Compile Include="Services\RazdvajanjePrijemaStavkeServices.cs" />
+    <Compile Include="Services\RolaServices.cs" />
+    <Compile Include="Services\SarzaServices.cs" />
+    <Compile Include="Services\SastavnicaPrijemServices.cs" />
+    <Compile Include="Services\SastavnicaServices.cs" />
+    <Compile Include="Services\SastavnicaStavkeServices.cs" />
+    <Compile Include="Services\SerijskiBrojPakovanjeServices.cs" />
+    <Compile Include="Services\SerijskiBrojServices.cs" />
+    <Compile Include="Services\SifanikEntitetaServices.cs" />
+    <Compile Include="Services\SifarnikEntitetaTipServices.cs" />
+    <Compile Include="Services\SifarnikServis.cs" />
+    <Compile Include="Services\SkladisteServices.cs" />
+    <Compile Include="Services\SpecifikacijaOtpremeServices.cs" />
+    <Compile Include="Services\SpecZaCarinjenjeServices.cs" />
+    <Compile Include="Services\SpecZaCarinjenjeStavkeServices.cs" />
+    <Compile Include="Services\StampaciNalepniceServices.cs" />
+    <Compile Include="Services\StanjeZalihaArhivaServices.cs" />
+    <Compile Include="Services\StanjeZalihaServices.cs" />
+    <Compile Include="Services\StatusLogServices.cs" />
+    <Compile Include="Services\StorageReportZenithServices.cs" />
+    <Compile Include="Services\StornoDokumentaServices.cs" />
+    <Compile Include="Services\SumaSarzaMBServices.cs" />
+    <Compile Include="Services\TarifaStavkeServices.cs" />
+    <Compile Include="Services\tmpArtikalServices.cs" />
+    <Compile Include="Services\TransakcijaZalihaServices.cs" />
+    <Compile Include="Services\TranZalServices.cs" />
+    <Compile Include="Services\UlaziIzlaziServices.cs" />
+    <Compile Include="Services\UslugaServices.cs" />
+    <Compile Include="Services\UtovarServices.cs" />
+    <Compile Include="Services\UtovarStavkeServices.cs" />
+    <Compile Include="Services\ValutaServices.cs" />
+    <Compile Include="Services\VerzijaServices.cs" />
+    <Compile Include="Services\ZaduzenjaMBServices.cs" />
+    <Compile Include="Services\ZahtevZaPromenuZalihaServices.cs" />
+    <Compile Include="Services\ZalihaServices.cs" />
+    <Compile Include="Services\ZaliheZaPremestajTempServices.cs" />
+    <Compile Include="Services\ZauzeteRegalneLokacijePoVlasnikuServices.cs" />
+    <Compile Include="Services\ZauzeteRegalneLokacijePoVlasnikuSUMServices.cs" />
+    <Compile Include="Services\ZonaServices.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Context\MpContext.cs" />
+    <Compile Include="Data\Artikal.cs" />
+    <Compile Include="Data\ArtikliIzlaz.cs" />
+    <Compile Include="Data\ArtikliLokacije.cs" />
+    <Compile Include="Data\ArtikliUlaz.cs" />
+    <Compile Include="Data\ArtikliZamena.cs" />
+    <Compile Include="Data\Atribut.cs" />
+    <Compile Include="Data\Barcode.cs" />
+    <Compile Include="Data\Blokada.cs" />
+    <Compile Include="Data\Brojac.cs" />
+    <Compile Include="Data\CarinskaGrupaArtikla.cs" />
+    <Compile Include="Data\CarinskaIspostava.cs" />
+    <Compile Include="Data\CarinskaOtpremnica.cs" />
+    <Compile Include="Data\CarinskaOtpremnicaStavke.cs" />
+    <Compile Include="Data\CarinskaPrijemnica.cs" />
+    <Compile Include="Data\CarinskaPrijemnicaStavke.cs" />
+    <Compile Include="Data\COReport.cs" />
+    <Compile Include="Data\CPReport.cs" />
+    <Compile Include="Data\CrossDock.cs" />
+    <Compile Include="Data\DodatnoAngazovaniRadnik.cs" />
+    <Compile Include="Data\DupleSifre.cs" />
+    <Compile Include="Data\EksterniKorisnik.cs" />
+    <Compile Include="Data\EksterniPreno.cs" />
+    <Compile Include="Data\EksterniPrenosStavke.cs" />
+    <Compile Include="Data\Grupa.cs" />
+    <Compile Include="Data\GrupaStavke.cs" />
+    <Compile Include="Data\ImportSerijskihBrojevaTemp.cs" />
+    <Compile Include="Data\InterfaceLog.cs" />
+    <Compile Include="Data\InterniPreno.cs" />
+    <Compile Include="Data\InterniPrenosStavke.cs" />
+    <Compile Include="Data\IzlazniID.cs" />
+    <Compile Include="Data\IzvestajSkladistenja.cs" />
+    <Compile Include="Data\JCINaimenovanja.cs" />
+    <Compile Include="Data\JM.cs" />
+    <Compile Include="Data\KarticaArtikla.cs" />
+    <Compile Include="Data\KEPU.cs" />
+    <Compile Include="Data\Kontakt.cs" />
+    <Compile Include="Data\Kontejner.cs" />
+    <Compile Include="Data\KontejnerPrijem.cs" />
+    <Compile Include="Data\Korisnik.cs" />
+    <Compile Include="Data\LogHost.cs" />
+    <Compile Include="Data\Lokacija.cs" />
+    <Compile Include="Data\LokacijaKlijenta.cs" />
+    <Compile Include="Data\LPN.cs" />
+    <Compile Include="Data\MagacinskaKnjiga.cs" />
+    <Compile Include="Data\Mesto.cs" />
+    <Compile Include="Data\NabavniNalog.cs" />
+    <Compile Include="Data\NabavniNalogStavke.cs" />
+    <Compile Include="Data\NalogLogPodaci.cs" />
+    <Compile Include="Data\NalogZaPakovanje.cs" />
+    <Compile Include="Data\NeradniDani.cs" />
+    <Compile Include="Data\NerazduzeniMB.cs" />
+    <Compile Include="Data\Oblast.cs" />
+    <Compile Include="Data\Obracun.cs" />
+    <Compile Include="Data\ObracunCarinski.cs" />
+    <Compile Include="Data\ObracunKomercijalni.cs" />
+    <Compile Include="Data\Odabir.cs" />
+    <Compile Include="Data\OdabirReport.cs" />
+    <Compile Include="Data\Otpremnica.cs" />
+    <Compile Include="Data\OtpremnicaKontrola.cs" />
+    <Compile Include="Data\OtpremnicaStatusLog.cs" />
+    <Compile Include="Data\OtpremnicaStavke.cs" />
+    <Compile Include="Data\Pakovanje.cs" />
+    <Compile Include="Data\Parametrizacija.cs" />
+    <Compile Include="Data\PodesavanjaFormi.cs" />
+    <Compile Include="Data\PodesavanjeZaliha.cs" />
+    <Compile Include="Data\PodesavanjeZalihaStavke.cs" />
+    <Compile Include="Data\Popi.cs" />
+    <Compile Include="Data\PopisLista.cs" />
+    <Compile Include="Data\PopisStavke.cs" />
+    <Compile Include="Data\PorukaKnjizenja.cs" />
+    <Compile Include="Data\Posao.cs" />
+    <Compile Include="Data\Pravo.cs" />
+    <Compile Include="Data\Prijemnica.cs" />
+    <Compile Include="Data\PrijemnicaStavke.cs" />
+    <Compile Include="Data\PrijemReport.cs" />
+    <Compile Include="Data\Prilog.cs" />
+    <Compile Include="Data\PSLArtikliTemp.cs" />
+    <Compile Include="Data\RazduzenjaMB.cs" />
+    <Compile Include="Data\RazdvajanjePrijema.cs" />
+    <Compile Include="Data\RazdvajanjePrijemaStavke.cs" />
+    <Compile Include="Data\Rola.cs" />
+    <Compile Include="Data\Sarza.cs" />
+    <Compile Include="Data\Sastavnica.cs" />
+    <Compile Include="Data\SastavnicaPrijem.cs" />
+    <Compile Include="Data\SastavnicaStavke.cs" />
+    <Compile Include="Data\SerijskiBroj.cs" />
+    <Compile Include="Data\SerijskiBrojPakovanje.cs" />
+    <Compile Include="Data\Sifarnik.cs" />
+    <Compile Include="Data\SifarnikEntiteta.cs" />
+    <Compile Include="Data\SifarnikEntitetaTip.cs" />
+    <Compile Include="Data\Skladiste.cs" />
+    <Compile Include="Data\SpecifikacijaOtpreme.cs" />
+    <Compile Include="Data\SpecZaCarinjenje.cs" />
+    <Compile Include="Data\SpecZaCarinjenjeStavke.cs" />
+    <Compile Include="Data\StampaciNalepnice.cs" />
+    <Compile Include="Data\StanjeZaliha.cs" />
+    <Compile Include="Data\StanjeZalihaArhiva.cs" />
+    <Compile Include="Data\StatusLog.cs" />
+    <Compile Include="Data\StorageReportZenith.cs" />
+    <Compile Include="Data\StornoDokumenta.cs" />
+    <Compile Include="Data\SumaSarzaMB.cs" />
+    <Compile Include="Data\Tarifa.cs" />
+    <Compile Include="Data\TarifaStavke.cs" />
+    <Compile Include="Data\tmpArtikal.cs" />
+    <Compile Include="Data\TransakcijaZaliha.cs" />
+    <Compile Include="Data\TranZal.cs" />
+    <Compile Include="Data\UlaziIzlazi.cs" />
+    <Compile Include="Data\Usluga.cs" />
+    <Compile Include="Data\Utovar.cs" />
+    <Compile Include="Data\UtovarStavke.cs" />
+    <Compile Include="Data\Valuta.cs" />
+    <Compile Include="Data\VertigoNijeUcitano_.cs" />
+    <Compile Include="Data\Verzija.cs" />
+    <Compile Include="Data\ZaduzenjaMB.cs" />
+    <Compile Include="Data\ZahtevZaPromenuZaliha.cs" />
+    <Compile Include="Data\Zaliha.cs" />
+    <Compile Include="Data\ZaliheZaPremestajTemp.cs" />
+    <Compile Include="Data\ZauzeteRegalneLokacijePoVlasniku.cs" />
+    <Compile Include="Data\ZauzeteRegalneLokacijePoVlasnikuSUM.cs" />
+    <Compile Include="Data\Zona.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Map\ArtikalMap.cs" />
+    <Compile Include="Map\ArtikliLokacijeMap.cs" />
+    <Compile Include="Map\ArtikliZamenaMap.cs" />
+    <Compile Include="Map\AtributMap.cs" />
+    <Compile Include="Map\BarcodeMap.cs" />
+    <Compile Include="Map\BlokadaMap.cs" />
+    <Compile Include="Map\CarinskaGrupaArtikalaMap.cs" />
+    <Compile Include="Map\CarinskaIspostavaMap.cs" />
+    <Compile Include="Map\CarinskaOtpremnicaMap.cs" />
+    <Compile Include="Map\CarinskaOtpremnicaStavkeMap.cs" />
+    <Compile Include="Map\CarinskaPrijemnicaMap.cs" />
+    <Compile Include="Map\CarinskaPrijemnicaStavkeMap.cs" />
+    <Compile Include="Map\CrosDockMap.cs" />
+    <Compile Include="Map\DodatnoAngazovaniRadnikMap.cs" />
+    <Compile Include="Map\EksterniKorisnikMap.cs" />
+    <Compile Include="Map\EksterniPrenosMap.cs" />
+    <Compile Include="Map\EksterniPrenosStavkeMap.cs" />
+    <Compile Include="Map\GrupaMap.cs" />
+    <Compile Include="Map\GrupaStavkeMap.cs" />
+    <Compile Include="Map\InterfaceLogMap.cs" />
+    <Compile Include="Map\InterniPrenosMap.cs" />
+    <Compile Include="Map\InterniPrenosStavkeMap.cs" />
+    <Compile Include="Map\IzlazniIDMap.cs" />
+    <Compile Include="Map\IzvestajSklaistenjaMap.cs" />
+    <Compile Include="Map\JCINaimenovanjaMap.cs" />
+    <Compile Include="Map\JMMap.cs" />
+    <Compile Include="Map\KepuMap.cs" />
+    <Compile Include="Map\KontaktMap.cs" />
+    <Compile Include="Map\KontejnerMap.cs" />
+    <Compile Include="Map\KontejnerPrijemMap.cs" />
+    <Compile Include="Map\KorisnikMap.cs" />
+    <Compile Include="Map\LokacijaKlijentaMap.cs" />
+    <Compile Include="Map\LokacijaMap.cs" />
+    <Compile Include="Map\LPNMap.cs" />
+    <Compile Include="Map\MestoMap.cs" />
+    <Compile Include="Map\NabavniNalogMap.cs" />
+    <Compile Include="Map\NabavniNalogStavkeMap.cs" />
+    <Compile Include="Map\NalogZaPakovanjeMap.cs" />
+    <Compile Include="Map\OblastMap.cs" />
+    <Compile Include="Map\ObracunKomercijalniMap.cs" />
+    <Compile Include="Map\ObracunMap.cs" />
+    <Compile Include="Map\OdabirMap.cs" />
+    <Compile Include="Map\OtpremnicaKontrolaMap.cs" />
+    <Compile Include="Map\OtpremnicaMap.cs" />
+    <Compile Include="Map\OtpremnicaStavkeMap.cs" />
+    <Compile Include="Map\PakovanjeMap.cs" />
+    <Compile Include="Map\ParametrizacijaMap.cs" />
+    <Compile Include="Map\PodesavanjeZalihaMap.cs" />
+    <Compile Include="Map\PodesavanjeZalihaStavkeMap.cs" />
+    <Compile Include="Map\PopisListaMap.cs" />
+    <Compile Include="Map\PopisMap.cs" />
+    <Compile Include="Map\PopisStavkeMap.cs" />
+    <Compile Include="Map\PorukaKnjizenjaMap.cs" />
+    <Compile Include="Map\PosaoMap.cs" />
+    <Compile Include="Map\PravoMap.cs" />
+    <Compile Include="Map\PrijemnicaMap.cs" />
+    <Compile Include="Map\PrijemnicaStavkeMap.cs" />
+    <Compile Include="Map\PrilogMap.cs" />
+    <Compile Include="Map\RazdvajanjePrijemaMap.cs" />
+    <Compile Include="Map\RazdvajanjePrijemaStavkeMap.cs" />
+    <Compile Include="Map\RolaMap.cs" />
+    <Compile Include="Map\SarzaMap.cs" />
+    <Compile Include="Map\SastavnicaMap.cs" />
+    <Compile Include="Map\SastavnicaStavkeMap.cs" />
+    <Compile Include="Map\SerijskiBrojMap.cs" />
+    <Compile Include="Map\SifarnikEntitetaMap.cs" />
+    <Compile Include="Map\SifarnikEntitetaTipMap.cs" />
+    <Compile Include="Map\SifarnikMap.cs" />
+    <Compile Include="Map\SkladisteMap.cs" />
+    <Compile Include="Map\SpecifikacijaOtpremMap.cs" />
+    <Compile Include="Map\SpecZaCarinjenjeMap.cs" />
+    <Compile Include="Map\SpecZaCarinjenjeStavkeMap.cs" />
+    <Compile Include="Map\StanjeZalihaArhivaMap.cs" />
+    <Compile Include="Map\StanjeZalihaMap.cs" />
+    <Compile Include="Map\StornoDocumemtaMap.cs" />
+    <Compile Include="Map\TarifaMap.cs" />
+    <Compile Include="Map\TarifaStavkeMap.cs" />
+    <Compile Include="Map\TransakcijaZalihaMap.cs" />
+    <Compile Include="Map\UslugaMap.cs" />
+    <Compile Include="Map\UtovarMap.cs" />
+    <Compile Include="Map\UtovarStavkeMap.cs" />
+    <Compile Include="Map\ValutaMap.cs" />
+    <Compile Include="Map\VerzijaMap.cs" />
+    <Compile Include="Map\ZahtevZaPromenuZalihaMap.cs" />
+    <Compile Include="Map\ZalihaMap.cs" />
+    <Compile Include="Map\ZonaMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
