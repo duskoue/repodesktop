@@ -13,7 +13,7 @@ namespace MagacinskoPoslovanje.Context
     {
         public MpContext(string connection) : base(connection)
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<MpContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<MpContext>());
         }
 
         #region DB SET
