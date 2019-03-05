@@ -17,6 +17,7 @@ using MagacinskoPoslovanje.Data;
 using System.IO;
 using System.Data.Entity;
 using MagacinskoPoslovanje.Services;
+using Microsoft.Win32;
 
 namespace MagacinskoPoslovanje
 {
@@ -240,6 +241,68 @@ namespace MagacinskoPoslovanje
         {
             
 
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Grid grd = new Grid();
+                grd.Height = 210;
+                grd.Width = 400;
+                Button btn = new Button();
+                btn.Height = 50;
+                btn.Width = 80;
+                btn.Content = "Dyn. Button";
+                btn.Background = new SolidColorBrush(Colors.Red);
+                btn.Margin = new Thickness(5, 5, 310, 120);
+                grd.Children.Add(btn);
+
+                TextBox txt = new TextBox();
+                txt.Height = 50;
+                txt.Width = 100;
+                txt.Text = "Dynamic TextBox";
+                txt.Foreground = new SolidColorBrush(Colors.Red);
+                txt.Margin = new Thickness(5, 60, 310, 80);
+                grd.Children.Add(txt);
+
+                //Store this Xaml in File
+
+                FileStream Fs = new FileStream(@"D:\MyDesign.Xml",
+                    FileMode.CreateNew);
+                System.Windows.Markup.XamlWriter.Save(grd, Fs);
+                Fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog Fd = new OpenFileDialog();
+                Fd.ShowDialog();
+                string LoadedFileName = Fd.FileName;
+
+                //Load the file
+                FileStream Fs = new FileStream(@LoadedFileName, FileMode.Open);
+                Grid grdToLoad = new Grid();
+                grdToLoad.Height = 410;
+                grdToLoad.Width = 400;
+
+                grdToLoad = System.Windows.Markup.XamlReader.Load(Fs) as Grid;
+
+                mgrid.Children.Add(grdToLoad);
+
+                Fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
