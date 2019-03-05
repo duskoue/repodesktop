@@ -30,6 +30,12 @@ namespace MagacinskoPoslovanje
         public MainWindow()
         {
             InitializeComponent();
+            CMenuItemDef lmeniDef = new CMenuItemDef();
+            lmeniDef.LoadMenu("GLAVNI_MENI");
+
+            this.CreateMenu(lmeniDef);
+
+
             try
             {
                 MpContext mp = new MpContext("InfoContext");
@@ -227,81 +233,74 @@ namespace MagacinskoPoslovanje
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
                 File.WriteAllText(@"D:\Greska.txt", ex.ToString());
             }
 
-            
-           
+        }
 
+        private void CreateMenu(CMenuItemDef pmniDef)
+        {
+            Menu mojMeni = new Menu();
+            mojMeni.VerticalAlignment = VerticalAlignment.Top;
+            mojMeni.HorizontalAlignment = HorizontalAlignment.Stretch;
+            mojMeni.Height = 25;
+            mainGrid.Children.Add(mojMeni);
+
+            foreach (CMenuItemDef miTempDef in pmniDef.Items)
+            {
+                MenuItem mniItem = new MenuItem();
+                mniItem.Header = miTempDef.Header;
+                mniItem.IsEnabled = miTempDef.IsEnabled;
+
+                mniItem.Resources.Add("APP_OPTION", miTempDef.OptionId);
+
+                if (miTempDef.Items.Count == 0 || miTempDef.OptionId != "")
+                {
+                    mniItem.Click += MenuClick;
+                }
+                else
+                {
+                    this.CreateSubMenu(mniItem, miTempDef.Items);
+                }
+
+                mojMeni.Items.Add(mniItem);
+
+            }
+        }
+        private void CreateSubMenu(MenuItem pmnItem, ICollection<CMenuItemDef> pSubMenuDef)
+        {
+            foreach (CMenuItemDef miTempDef in pSubMenuDef)
+            {
+                MenuItem mniItem = new MenuItem();
+                mniItem.Header = miTempDef.Header;
+                mniItem.IsEnabled = miTempDef.IsEnabled;
+
+                mniItem.Resources.Add("APP_OPTION", miTempDef.OptionId);
+
+                if (miTempDef.Items.Count == 0 || miTempDef.OptionId != "")
+                {
+                    mniItem.Click += MenuClick;
+                }
+                else
+                {
+                    this.CreateSubMenu(mniItem, miTempDef.Items);
+                }
+
+                pmnItem.Items.Add(mniItem);
+
+            }
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void MenuClick(object sender, RoutedEventArgs e)
         {
-            
+            MenuItem lMnu = (MenuItem)sender;
 
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            try
+            string lOptionId = (string)lMnu.FindResource("APP_OPTION");
+            if (lOptionId != "")
             {
-                Grid grd = new Grid();
-                grd.Height = 210;
-                grd.Width = 400;
-                Button btn = new Button();
-                btn.Height = 50;
-                btn.Width = 80;
-                btn.Content = "Dyn. Button";
-                btn.Background = new SolidColorBrush(Colors.Red);
-                btn.Margin = new Thickness(5, 5, 310, 120);
-                grd.Children.Add(btn);
-
-                TextBox txt = new TextBox();
-                txt.Height = 50;
-                txt.Width = 100;
-                txt.Text = "Dynamic TextBox";
-                txt.Foreground = new SolidColorBrush(Colors.Red);
-                txt.Margin = new Thickness(5, 60, 310, 80);
-                grd.Children.Add(txt);
-
-                //Store this Xaml in File
-
-                FileStream Fs = new FileStream(@"D:\MyDesign.Xml",
-                    FileMode.CreateNew);
-                System.Windows.Markup.XamlWriter.Save(grd, Fs);
-                Fs.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                OpenFileDialog Fd = new OpenFileDialog();
-                Fd.ShowDialog();
-                string LoadedFileName = Fd.FileName;
-
-                //Load the file
-                FileStream Fs = new FileStream(@LoadedFileName, FileMode.Open);
-                Grid grdToLoad = new Grid();
-                grdToLoad.Height = 410;
-                grdToLoad.Width = 400;
-
-                grdToLoad = System.Windows.Markup.XamlReader.Load(Fs) as Grid;
-
-                mgrid.Children.Add(grdToLoad);
-
-                Fs.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Opcija: " + lOptionId);
             }
         }
     }

@@ -98,6 +98,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CMenuItemDef.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Services\ArtikalServices.cs" />
