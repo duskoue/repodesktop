@@ -26,16 +26,16 @@ namespace MagacinskoPoslovanje
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+       
         public MainWindow()
         {
+           
             InitializeComponent();
             CMenuItemDef lmeniDef = new CMenuItemDef();
             lmeniDef.LoadMenu("GLAVNI_MENI");
 
             this.CreateMenu(lmeniDef);
-
-
+            
             try
             {
                 MpContext mp = new MpContext("InfoContext");
@@ -252,9 +252,17 @@ namespace MagacinskoPoslovanje
                 MenuItem mniItem = new MenuItem();
                 mniItem.Header = miTempDef.Header;
                 mniItem.IsEnabled = miTempDef.IsEnabled;
+                string test = miTempDef.PutanjaDoIkonice.ToString();
+                
+                
+                mniItem.Icon = new Image
+                {
+                    Source = new BitmapImage(new Uri(test, UriKind.Relative))
+                };
 
                 mniItem.Resources.Add("APP_OPTION", miTempDef.OptionId);
-
+               
+               
                 if (miTempDef.Items.Count == 0 || miTempDef.OptionId != "")
                 {
                     mniItem.Click += MenuClick;
@@ -275,8 +283,15 @@ namespace MagacinskoPoslovanje
                 MenuItem mniItem = new MenuItem();
                 mniItem.Header = miTempDef.Header;
                 mniItem.IsEnabled = miTempDef.IsEnabled;
-
                 mniItem.Resources.Add("APP_OPTION", miTempDef.OptionId);
+
+                string test = miTempDef.PutanjaDoIkonice.ToString();
+
+
+                mniItem.Icon = new Image
+                {
+                    Source = new BitmapImage(new Uri(test, UriKind.Relative))
+                };
 
                 if (miTempDef.Items.Count == 0 || miTempDef.OptionId != "")
                 {
@@ -303,5 +318,7 @@ namespace MagacinskoPoslovanje
                 MessageBox.Show("Opcija: " + lOptionId);
             }
         }
+
+
     }
 }
