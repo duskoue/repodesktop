@@ -13,6 +13,7 @@ namespace MagacinskoPoslovanje.Context
     {
         public MpContext(string connection) : base(connection)
         {
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<MpContext>());
             Database.SetInitializer(new CreateDatabaseIfNotExists<MpContext>());
         }
 
@@ -115,6 +116,7 @@ namespace MagacinskoPoslovanje.Context
         public virtual DbSet<ZahtevZaPromenuZaliha> ZahtevZaPromenuZaliha { get; set; }
         public virtual DbSet<Zaliha> Zaliha { get; set; }
         public virtual DbSet<Zona> Zona { get; set; }
+        public virtual DbSet<CMenuItemDef> Meni { get; set; }
 
 
         #endregion
@@ -218,7 +220,7 @@ namespace MagacinskoPoslovanje.Context
             //    .WithRequired(e => e.Artikal)
             //    .HasForeignKey(e => new { e.ArtikalSifra, e.ArtikalVlasnik })
             //    .WillCascadeOnDelete(false);
-
+            modelBuilder.Entity<CMenuItemDef>();
 
 
             #endregion

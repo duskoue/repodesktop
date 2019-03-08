@@ -18,6 +18,9 @@ using System.IO;
 using System.Data.Entity;
 using MagacinskoPoslovanje.Services;
 using Microsoft.Win32;
+using System.Reflection;
+using System.Diagnostics;
+using MagacinskoPoslovanje.Foeme.Administracija;
 
 namespace MagacinskoPoslovanje
 {
@@ -29,10 +32,11 @@ namespace MagacinskoPoslovanje
        
         public MainWindow()
         {
+            
            
             InitializeComponent();
             CMenuItemDef lmeniDef = new CMenuItemDef();
-            lmeniDef.LoadMenu("GLAVNI_MENI");
+            lmeniDef.LoadMenu("GL");
 
             this.CreateMenu(lmeniDef);
             
@@ -310,15 +314,29 @@ namespace MagacinskoPoslovanje
 
         private void MenuClick(object sender, RoutedEventArgs e)
         {
+          
             MenuItem lMnu = (MenuItem)sender;
 
             string lOptionId = (string)lMnu.FindResource("APP_OPTION");
             if (lOptionId != "")
             {
-                MessageBox.Show("Opcija: " + lOptionId);
+
+                try
+                {
+                    Type testType = typeof(menimetode);
+                    object testInstance = Activator.CreateInstance(testType);
+
+                    MethodInfo toInvoke = testType.GetMethod(lOptionId);
+                    toInvoke.Invoke(testInstance, null);
+                }
+                catch (Exception ex)
+                {
+
+                   // MessageBox.Show(ex.Message.ToString());
+                }
             }
         }
 
-
+       
     }
 }

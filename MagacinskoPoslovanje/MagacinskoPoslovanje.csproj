@@ -98,7 +98,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CMenuItemDef.cs" />
+    <Compile Include="Data\CMenuItemDef.cs" />
+    <Compile Include="Foeme\Administracija\FrmAdministracija.xaml.cs">
+      <DependentUpon>FrmAdministracija.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="menimetode.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Services\ArtikalServices.cs" />
@@ -222,6 +226,10 @@
     <Compile Include="Services\ZonaServices.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Page Include="Foeme\Administracija\FrmAdministracija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
